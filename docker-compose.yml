@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  tweet-analysis:
+    build: ./
+    ports:
+    - "9100:9000"
+    environment:
+      - "AWS_ACCESS_KEY_ID=imroot"
+      - "AWS_SECRET_ACCESS_KEY=beaconpass"
+      - "MLFLOW_S3_ENDPOINT_URL=http://host.docker.internal:9000"
+      - "MLFLOW_TRACKING_URI=http://host.docker.internal:5000"
+      - "MLFLOW_PREDICTION_LABELS=test"
+      - "MLFOW_PREDICTION_MODELS_URI=models:/mlflow-active-learner/Production"
