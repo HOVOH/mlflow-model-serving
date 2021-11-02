@@ -40,7 +40,7 @@ class MLFlowModelLoader:
             if calc_uncertainty:
                 uncertainty = classifier_uncertainty(model, data)
                 uncertainty = prep_for_json(uncertainty)
-                inference["uncertainty"] = uncertainty
+                inference["uncertainties"] = uncertainty
             inferences.append(inference)
         return inferences
 

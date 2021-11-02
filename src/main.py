@@ -19,7 +19,7 @@ def predict():
         tasks = pd.DataFrame(data=tasks)
         predictions = model.predict(tasks, calc_uncertainty=request.args.get("uncertainty"))
         return jsonify({
-            "data": predictions
+            "annotations": predictions
         })
     else:
         return "no tasks"
